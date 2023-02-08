@@ -1,14 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
-<%--<%@ taglib prefix="c" uri="http://www.springframework.org/tags %>--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <html>
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
 </head>
 <body>
-<a href="/index.html">Main</a>
+<a href="/index.html">메인</a>
 <table>
   <thead>
   <th>id</th>
@@ -17,7 +18,7 @@
   </thead>
   <tbody>
   <c:forEach var="item" items="${members}">
-    <tr>ㅁ
+    <tr>
       <td>${item.id}</td>
       <td>${item.username}</td>
       <td>${item.age}</td>
@@ -25,5 +26,32 @@
   </c:forEach>
   </tbody>
 </table>
+
 </body>
 </html>
+
+<%--<html>--%>
+<%--<head>--%>
+<%--  <meta charset="UTF-8">--%>
+<%--  <title>Title</title>--%>
+<%--</head>--%>
+<%--<body>--%>
+<%--<a href="/index.html">Main</a>--%>
+<%--<table>--%>
+<%--  <thead>--%>
+<%--  <th>id</th>--%>
+<%--  <th>username</th>--%>
+<%--  <th>age</th>--%>
+<%--  </thead>--%>
+<%--  <tbody>--%>
+<%--  <c:forEach var="item" items="${members}">--%>
+<%--    <tr>ㅁ--%>
+<%--      <td>${item.id}</td>--%>
+<%--      <td>${item.username}</td>--%>
+<%--      <td>${item.age}</td>--%>
+<%--    </tr>--%>
+<%--  </c:forEach>--%>
+<%--  </tbody>--%>
+<%--</table>--%>
+<%--</body>--%>
+<%--</html>--%>
