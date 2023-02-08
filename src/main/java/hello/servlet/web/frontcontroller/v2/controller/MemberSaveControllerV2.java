@@ -1,21 +1,21 @@
-package hello.servlet.web.frontcontroller.v1.controller;
+package hello.servlet.web.frontcontroller.v2.controller;
 
+import com.sun.source.tree.MemberReferenceTree;
 import hello.servlet.domain.member.Member;
 import hello.servlet.domain.member.MemberRepository;
-import hello.servlet.web.frontcontroller.v1.ControllerV1;
-import jakarta.servlet.RequestDispatcher;
+import hello.servlet.web.frontcontroller.MyView;
+import hello.servlet.web.frontcontroller.v2.ControllerV2;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.web.servlet.DispatcherServlet;
 
 import java.io.IOException;
 
-public class MemberServiceControllerV1 implements ControllerV1 {
+public class MemberSaveControllerV2 implements ControllerV2 {
     private MemberRepository memberRepository = MemberRepository.getInstance();
 
     @Override
-    public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public MyView process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         int age = Integer.parseInt(req.getParameter("age"));
 
@@ -24,8 +24,6 @@ public class MemberServiceControllerV1 implements ControllerV1 {
 
         req.setAttribute("member", member);
 
-        String viewPath = "/WEB-INF/views/save-result.jsp";
-        RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
-        dispatcher.forward(req, resp);
+        return new MyView("/WEB-INF/views/save-result.jsp");
     }
 }
